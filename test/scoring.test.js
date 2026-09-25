@@ -30,5 +30,6 @@ test('weekOf', () => {
 test('nextDailyLogId', () => {
   assert.equal(nextDailyLogId('2026-09-25', 'ANKI', []), 'DL-20260925-ANKI01');
   assert.equal(nextDailyLogId('2026-09-25', 'ANKI', ['DL-20260925-ANKI01', 'DL-20260925-QUIZ01', 'DL-20260924-ANKI01']), 'DL-20260925-ANKI02');
+  assert.equal(nextDailyLogId('2026-09-25', 'ANKI', ['DL-20260925-ANKI201', 'DL-20260925-ANKI01']), 'DL-20260925-ANKI02');
 });
-test('overSec', () => { assert.equal(overSec(70, 60), 10); assert.equal(overSec(50, 60), 0); assert.equal(overSec(50, null), 0); });
+test('overSec', () => { assert.equal(overSec(70, 60), 10); assert.equal(overSec(50, 60), 0); assert.equal(overSec(50, null), 0); assert.equal(overSec(10, 0), 10); });
