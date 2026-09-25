@@ -1,5 +1,6 @@
 import { test, assert } from './runner.js';
 import { STORES, openDb, put, get, getAll, putAll, del, clear, count, exportAll, validateBackup, importAll, deleteDb } from '../js/db.js';
+import { seedIfEmpty } from '../js/seed.js';
 const NAME = 'boki-test';
 export async function fresh() { await deleteDb(NAME); return openDb(NAME); }
 
@@ -36,4 +37,11 @@ test('import merge keeps newer updatedAt', async () => {
   dump.stores.cards = [{ id: 'FC-1', front: 'remote-old', updatedAt: '2026-09-20T00:00:00Z' }, { id: 'FC-2', front: 'remote', updatedAt: '2026-09-20T00:00:00Z' }];
   await importAll(db, dump, 'merge');
   assert.equal((await get(db, 'cards', 'FC-1')).front, 'local-new'); assert.equal((await get(db, 'cards', 'FC-2')).front, 'remote'); db.close();
+});
+test('seedIfEmpty loads once', async () => {
+  const db = await fresh();
+  const seed = await (await fetch('../data/seed.json')).json();
+  assert.ok(await seedIfEmpty(db, seed)); assert.equal(await count(db, 'cards'), 20); assert.equal(await count(db, 'roadmap'), 24); assert.equal(await count(db, 'questions'), 16);
+  assert.equal((await get(db, 'settings', 'main')).startDate, '2026-09-18');
+  assert.ok(!(await seedIfEmpty(db, seed))); db.close();
 });

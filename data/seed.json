@@ -1,0 +1,1929 @@
+{
+ "settings": [
+  {
+   "id": "main",
+   "startDate": "2026-09-18",
+   "examDate": "2027-03-06",
+   "weekdayMin": 90,
+   "weekendMin": 120,
+   "passScore": 70,
+   "safeScore": 75
+  }
+ ],
+ "roadmap": [
+  {
+   "id": "RM-01",
+   "week": 1,
+   "phase": "基礎診断・商業基礎",
+   "field": "3級基礎",
+   "topic": "3級基礎診断・基本仕訳",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 60,
+   "targetRate": 0.7,
+   "commuteTask": "基礎診断と貸借カード",
+   "nightTask": "診断・基本仕訳",
+   "weekendTask": "弱点演習",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週60問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "診断完了・弱点3つ特定"
+  },
+  {
+   "id": "RM-02",
+   "week": 2,
+   "phase": "基礎診断・商業基礎",
+   "field": "商業簿記",
+   "topic": "商品売買・現金預金・債権債務",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 65,
+   "targetRate": 0.75,
+   "commuteTask": "仕訳判断",
+   "nightTask": "基本計算",
+   "weekendTask": "確認テスト",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週65問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "基本仕訳80%以上"
+  },
+  {
+   "id": "RM-03",
+   "week": 3,
+   "phase": "基礎診断・商業基礎",
+   "field": "商業簿記",
+   "topic": "決算整理・財務諸表",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 55,
+   "targetRate": 0.7,
+   "commuteTask": "決算カード",
+   "nightTask": "決算仕訳",
+   "weekendTask": "決算総合",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週55問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "決算仕訳75%以上"
+  },
+  {
+   "id": "RM-04",
+   "week": 4,
+   "phase": "基礎診断・商業基礎",
+   "field": "商業簿記",
+   "topic": "3級累積復習・2級導入",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 50,
+   "targetRate": 0.75,
+   "commuteTask": "誤答カード",
+   "nightTask": "累積演習",
+   "weekendTask": "月末テスト",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週50問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "A基礎80%以上"
+  },
+  {
+   "id": "RM-05",
+   "week": 5,
+   "phase": "商業簿記",
+   "field": "商業簿記",
+   "topic": "株式会社・剰余金・配当",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 55,
+   "targetRate": 0.75,
+   "commuteTask": "純資産カード",
+   "nightTask": "仕訳",
+   "weekendTask": "株主資本総合",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週55問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "基本仕訳80%以上"
+  },
+  {
+   "id": "RM-06",
+   "week": 6,
+   "phase": "商業簿記",
+   "field": "商業簿記",
+   "topic": "固定資産・リース基礎",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 60,
+   "targetRate": 0.75,
+   "commuteTask": "処理手順",
+   "nightTask": "計算・仕訳",
+   "weekendTask": "総合問題",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週60問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "売却・償却80%以上"
+  },
+  {
+   "id": "RM-07",
+   "week": 7,
+   "phase": "商業簿記",
+   "field": "商業簿記",
+   "topic": "有価証券・外貨建取引",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 60,
+   "targetRate": 0.75,
+   "commuteTask": "区分カード",
+   "nightTask": "評価計算",
+   "weekendTask": "複合仕訳",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週60問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "区分判断80%以上"
+  },
+  {
+   "id": "RM-08",
+   "week": 8,
+   "phase": "商業簿記",
+   "field": "商業簿記",
+   "topic": "引当金・税金・収益認識",
+   "priority": "B",
+   "planMin": 690,
+   "planQ": 55,
+   "targetRate": 0.7,
+   "commuteTask": "処理判断",
+   "nightTask": "累積復習",
+   "weekendTask": "月末テスト",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週55問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "商業模試60%以上"
+  },
+  {
+   "id": "RM-09",
+   "week": 9,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "工業簿記の流れ・費目別計算",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 65,
+   "targetRate": 0.8,
+   "commuteTask": "原価分類",
+   "nightTask": "材料・労務計算",
+   "weekendTask": "基本総合",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週65問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "三要素分類90%以上"
+  },
+  {
+   "id": "RM-10",
+   "week": 10,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "製造間接費・予定配賦",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 60,
+   "targetRate": 0.8,
+   "commuteTask": "配賦カード",
+   "nightTask": "差異計算",
+   "weekendTask": "総合問題",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週60問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "配賦差異80%以上"
+  },
+  {
+   "id": "RM-11",
+   "week": 11,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "個別原価計算",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 55,
+   "targetRate": 0.8,
+   "commuteTask": "指図書カード",
+   "nightTask": "原価計算表",
+   "weekendTask": "時間制限演習",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週55問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "15分以内80%以上"
+  },
+  {
+   "id": "RM-12",
+   "week": 12,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "部門別計算",
+   "priority": "B",
+   "planMin": 690,
+   "planQ": 50,
+   "targetRate": 0.75,
+   "commuteTask": "配賦順序",
+   "nightTask": "配賦計算",
+   "weekendTask": "月末テスト",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週50問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "工業70%以上"
+  },
+  {
+   "id": "RM-13",
+   "week": 13,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "総合原価計算・平均法",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 55,
+   "targetRate": 0.75,
+   "commuteTask": "換算量カード",
+   "nightTask": "基本計算",
+   "weekendTask": "総合問題",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週55問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "換算量80%以上"
+  },
+  {
+   "id": "RM-14",
+   "week": 14,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "先入先出法・仕損減損",
+   "priority": "B",
+   "planMin": 690,
+   "planQ": 55,
+   "targetRate": 0.75,
+   "commuteTask": "手順カード",
+   "nightTask": "計算反復",
+   "weekendTask": "比較演習",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週55問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "基本総合75%以上"
+  },
+  {
+   "id": "RM-15",
+   "week": 15,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "標準原価計算",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 60,
+   "targetRate": 0.8,
+   "commuteTask": "差異公式",
+   "nightTask": "差異問題",
+   "weekendTask": "総合問題",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週60問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "公式選択80%以上"
+  },
+  {
+   "id": "RM-16",
+   "week": 16,
+   "phase": "工業簿記",
+   "field": "工業簿記",
+   "topic": "直接原価計算・CVP",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 60,
+   "targetRate": 0.8,
+   "commuteTask": "CVP公式",
+   "nightTask": "損益分岐点",
+   "weekendTask": "月末テスト",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週60問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "工業75%以上"
+  },
+  {
+   "id": "RM-17",
+   "week": 17,
+   "phase": "総合・連結",
+   "field": "商業簿記",
+   "topic": "連結会計・基本",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 50,
+   "targetRate": 0.7,
+   "commuteTask": "連結仕訳",
+   "nightTask": "相殺消去",
+   "weekendTask": "基本総合",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週50問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "投資資本相殺70%以上"
+  },
+  {
+   "id": "RM-18",
+   "week": 18,
+   "phase": "総合・連結",
+   "field": "商業簿記",
+   "topic": "連結会計・内部取引",
+   "priority": "B",
+   "planMin": 690,
+   "planQ": 50,
+   "targetRate": 0.7,
+   "commuteTask": "消去カード",
+   "nightTask": "修正仕訳",
+   "weekendTask": "連結総合",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週50問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "基本消去75%以上"
+  },
+  {
+   "id": "RM-19",
+   "week": 19,
+   "phase": "総合・連結",
+   "field": "商業簿記",
+   "topic": "本支店会計・財務諸表総合",
+   "priority": "B",
+   "planMin": 690,
+   "planQ": 45,
+   "targetRate": 0.7,
+   "commuteTask": "内部取引",
+   "nightTask": "総合問題",
+   "weekendTask": "時間制限演習",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週45問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "20分以内65%以上"
+  },
+  {
+   "id": "RM-20",
+   "week": 20,
+   "phase": "模試・直前期",
+   "field": "共通",
+   "topic": "商工総合・月末模試",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 2,
+   "targetRate": 0.7,
+   "commuteTask": "誤答カード",
+   "nightTask": "大問演習",
+   "weekendTask": "90分模試",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週2問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "全問着手"
+  },
+  {
+   "id": "RM-21",
+   "week": 21,
+   "phase": "模試・直前期",
+   "field": "共通",
+   "topic": "弱点Aランク補修",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 2,
+   "targetRate": 0.72,
+   "commuteTask": "弱点カード",
+   "nightTask": "類題",
+   "weekendTask": "90分模試",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週2問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "A論点80%以上"
+  },
+  {
+   "id": "RM-22",
+   "week": 22,
+   "phase": "模試・直前期",
+   "field": "共通",
+   "topic": "ネット入力・時間短縮",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 2,
+   "targetRate": 0.75,
+   "commuteTask": "入力ルール",
+   "nightTask": "大問別計時",
+   "weekendTask": "90分模試",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週2問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "90分完走"
+  },
+  {
+   "id": "RM-23",
+   "week": 23,
+   "phase": "模試・直前期",
+   "field": "共通",
+   "topic": "初見模試・誤答補修",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 3,
+   "targetRate": 0.75,
+   "commuteTask": "誤答カード",
+   "nightTask": "類題",
+   "weekendTask": "90分模試",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週3問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "2回以上75点"
+  },
+  {
+   "id": "RM-24",
+   "week": 24,
+   "phase": "模試・直前期",
+   "field": "共通",
+   "topic": "最終調整・本番リハーサル",
+   "priority": "A",
+   "planMin": 690,
+   "planQ": 2,
+   "targetRate": 0.8,
+   "commuteTask": "Aカード",
+   "nightTask": "軽い演習",
+   "weekendTask": "本番リハーサル",
+   "minLine": "カード10枚＋問題5問",
+   "stdLine": "週2問＋復習",
+   "extraLine": "追加類題・Cランク",
+   "doneCond": "75～80点安定"
+  }
+ ],
+ "cards": [
+  {
+   "id": "FC-W01-0001",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "5要素",
+   "priority": "A",
+   "type": "借方貸方",
+   "front": "資産が増えたらどちら？",
+   "back": "借方。資産の増加は左、減少は右。",
+   "example": "現金が増えたら借方に現金。",
+   "pitfall": "入金をすべて収益と判断しない。",
+   "tags": "借方貸方 資産",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0002",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "5要素",
+   "priority": "A",
+   "type": "借方貸方",
+   "front": "負債が増えたらどちら？",
+   "back": "貸方。負債の増加は右、減少は左。",
+   "example": "借入時は貸方に借入金。",
+   "pitfall": "借方の現金増加と混同しない。",
+   "tags": "借方貸方 負債",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0003",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "5要素",
+   "priority": "A",
+   "type": "借方貸方",
+   "front": "収益が発生したらどちら？",
+   "back": "貸方。収益の発生は右。",
+   "example": "現金売上は借方現金、貸方売上。",
+   "pitfall": "現金の動きだけで判断しない。",
+   "tags": "収益 売上",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0004",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "5要素",
+   "priority": "A",
+   "type": "借方貸方",
+   "front": "費用が発生したらどちら？",
+   "back": "借方。費用の発生は左。",
+   "example": "給料支払は借方給料、貸方現金。",
+   "pitfall": "支払手段と費用科目を分ける。",
+   "tags": "費用",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0005",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "仕訳手順",
+   "priority": "A",
+   "type": "解答手順",
+   "front": "仕訳問題で最初にすることは？",
+   "back": "増えたもの、減ったもの、発生した収益・費用を列挙する。",
+   "example": "掛売上は売掛金増加と売上発生。",
+   "pitfall": "いきなり借方貸方を当てない。",
+   "tags": "仕訳 手順",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0006",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "商品売買",
+   "priority": "A",
+   "type": "仕訳パターン",
+   "front": "三分法で商品を仕入れたときの科目は？",
+   "back": "仕入。",
+   "example": "掛仕入は借方仕入、貸方買掛金。",
+   "pitfall": "備品購入に仕入を使わない。",
+   "tags": "商品売買 三分法",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0007",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "売掛金",
+   "priority": "A",
+   "type": "勘定科目",
+   "front": "商品を掛けで販売したとき増える資産は？",
+   "back": "売掛金。商品販売による後日回収の権利。",
+   "example": "借方売掛金、貸方売上。",
+   "pitfall": "商品以外の売却代金と区別する。",
+   "tags": "債権 売掛金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0008",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "買掛金",
+   "priority": "A",
+   "type": "勘定科目",
+   "front": "商品を掛けで仕入れたとき増える負債は？",
+   "back": "買掛金。商品仕入による後日支払義務。",
+   "example": "借方仕入、貸方買掛金。",
+   "pitfall": "備品の後払いは未払金。",
+   "tags": "債務 買掛金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0009",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "未収入金",
+   "priority": "A",
+   "type": "勘定科目",
+   "front": "備品を後払い条件で売却したときの債権は？",
+   "back": "未収入金。商品販売以外の未回収額。",
+   "example": "借方未収入金。",
+   "pitfall": "売掛金にしない。",
+   "tags": "債権 未収入金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0010",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "未払金",
+   "priority": "A",
+   "type": "勘定科目",
+   "front": "備品を後払いで購入したときの負債は？",
+   "back": "未払金。商品仕入以外の未払額。",
+   "example": "借方備品、貸方未払金。",
+   "pitfall": "買掛金にしない。",
+   "tags": "債務 未払金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0011",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "前払金",
+   "priority": "A",
+   "type": "仕訳パターン",
+   "front": "商品受取前に手付金を払ったら？",
+   "back": "借方前払金。将来商品を受け取る権利なので資産。",
+   "example": "借方前払金、貸方現金。",
+   "pitfall": "未受領なのに仕入にしない。",
+   "tags": "前払金 手付金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0012",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "前受金",
+   "priority": "A",
+   "type": "仕訳パターン",
+   "front": "商品引渡前に手付金を受け取ったら？",
+   "back": "貸方前受金。将来引き渡す義務なので負債。",
+   "example": "借方現金、貸方前受金。",
+   "pitfall": "未引渡しなのに売上にしない。",
+   "tags": "前受金 手付金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0013",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "仮受金",
+   "priority": "B",
+   "type": "勘定科目",
+   "front": "内容不明の入金を受けたときの科目は？",
+   "back": "仮受金。内容判明まで一時的に負債処理。",
+   "example": "借方普通預金、貸方仮受金。",
+   "pitfall": "根拠なく売上にしない。",
+   "tags": "仮受金",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0014",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "現金過不足",
+   "priority": "A",
+   "type": "仕訳パターン",
+   "front": "実際現金が帳簿より少ないときは？",
+   "back": "現金を減らし、差額を現金過不足の借方へ。",
+   "example": "借方現金過不足、貸方現金。",
+   "pitfall": "帳簿を実際有高に合わせる。",
+   "tags": "現金過不足",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0015",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "減価償却",
+   "priority": "A",
+   "type": "計算式",
+   "front": "定額法の年間減価償却費の式は？",
+   "back": "（取得原価－残存価額）÷耐用年数。",
+   "example": "600,000円、残存0、5年なら600,000÷5。",
+   "pitfall": "帳簿価額と取得原価を混同しない。",
+   "tags": "固定資産 減価償却",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0016",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "費用の見越し",
+   "priority": "A",
+   "type": "処理ルール",
+   "front": "当期分だが未払いの費用は？",
+   "back": "当期費用を計上し、未払費用を負債計上する。",
+   "example": "借方支払利息、貸方未払利息。",
+   "pitfall": "未払いだから無処理にしない。",
+   "tags": "決算整理 見越し",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0017",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "費用の繰延べ",
+   "priority": "A",
+   "type": "処理ルール",
+   "front": "支払済みだが翌期分の費用は？",
+   "back": "当期費用から除き、前払費用として資産計上する。",
+   "example": "借方前払保険料、貸方保険料。",
+   "pitfall": "支払日だけで当期費用と判断しない。",
+   "tags": "決算整理 繰延べ",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0018",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "売上原価",
+   "priority": "A",
+   "type": "計算式",
+   "front": "売上原価の基本式は？",
+   "back": "期首商品＋当期仕入－期末商品。",
+   "example": "100＋600－150の順に処理。",
+   "pitfall": "期末商品を足さない。",
+   "tags": "売上原価",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0019",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "利益",
+   "priority": "A",
+   "type": "計算式",
+   "front": "利益を求める最小式は？",
+   "back": "収益合計－費用合計。",
+   "example": "売上－売上原価－その他費用。",
+   "pitfall": "仕入額をそのまま売上原価にしない。",
+   "tags": "利益 損益",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  },
+  {
+   "id": "FC-W01-0020",
+   "createdAt": "2026-09-18",
+   "field": "3級基礎",
+   "topic": "ケアレスミス防止",
+   "priority": "A",
+   "type": "ミス防止",
+   "front": "仕訳入力後の最終確認は？",
+   "back": "借貸合計、科目重複、金額の桁、取引条件を確認。",
+   "example": "複合仕訳は貸借合計を再確認。",
+   "pitfall": "科目だけ見て金額を見落とさない。",
+   "tags": "入力確認",
+   "status": "新規",
+   "due": "2026-09-25",
+   "interval": 0,
+   "ease": 2.5,
+   "reps": 0,
+   "streak": 0,
+   "lastResult": null,
+   "lastReviewed": null
+  }
+ ],
+ "dailyLogs": [
+  {
+   "id": "DL-20260918-ANKI01",
+   "date": "2026-09-18",
+   "sessionType": "単語帳",
+   "field": "3級基礎",
+   "topic": "Week1基礎カード",
+   "priority": "A",
+   "content": "Anki Week01 基礎カード20枚・初回診断",
+   "planMin": 30,
+   "actualMin": 9,
+   "q": 20,
+   "correct": 0,
+   "wrong": 20,
+   "blank": 0,
+   "understand": 1,
+   "focus": 1,
+   "confidence": 1,
+   "cause": "知識不足",
+   "comment": "初回診断。ユニークカード20枚はすべて自力回答できず、正答率0%。回答操作25回、実測8.72分、1回答平均20.92秒。誤答時に「難しい」を使用したため、Anki統計上は「もう一度」1回。次回から誤答・未回答は「もう一度」で統一する。",
+   "week": 1,
+   "rate": 0.0
+  },
+  {
+   "id": "DL-20260924-ANKI01",
+   "date": "2026-09-24",
+   "sessionType": "単語帳",
+   "field": "3級基礎",
+   "topic": "Week1基礎カード・再学習",
+   "priority": "A",
+   "content": "Anki Week01 20枚復習",
+   "planMin": 20,
+   "actualMin": 10,
+   "q": 20,
+   "correct": 5,
+   "wrong": 15,
+   "blank": 0,
+   "understand": 3,
+   "focus": 3,
+   "confidence": 2,
+   "cause": "未分類",
+   "comment": "",
+   "week": 1,
+   "rate": 0.25
+  },
+  {
+   "id": "DL-20260924-BASIC01",
+   "date": "2026-09-24",
+   "sessionType": "平日夜",
+   "field": "3級基礎",
+   "topic": "基本仕訳",
+   "priority": "A",
+   "content": "5要素確認、借方貸方10問、基本仕訳10問",
+   "planMin": 60,
+   "actualMin": 20,
+   "q": 20,
+   "correct": 18,
+   "wrong": 2,
+   "blank": 0,
+   "understand": 4,
+   "focus": 5,
+   "confidence": 4,
+   "cause": "問題文読み違い",
+   "comment": "弱点1：問題文から勘定科目を選ぶ判断\n弱点2：基本用語・処理ルールの即時想起\n弱点3：設問が求める回答範囲の把握不足による部分回答\n例：「仕訳入力後の最終確認は？」に対して「貸借合計を再確認」と回答したが、勘定科目の重複、金額の桁、取引条件まで含める必要があった。",
+   "week": 1,
+   "rate": 0.9
+  }
+ ],
+ "accounts": [
+  {
+   "name": "現金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "小口現金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "普通預金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "当座預金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "受取手形",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "売掛金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "クレジット売掛金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "電子記録債権",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "未収入金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "前払金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "立替金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "仮払金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "貸付金",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "商品",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "繰越商品",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "貯蔵品",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "前払費用",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "未収収益",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "建物",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "備品",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "車両運搬具",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "土地",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "仮払消費税",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "仮払法人税等",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "現金過不足",
+   "category": "資産",
+   "level": "3級"
+  },
+  {
+   "name": "支払手形",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "買掛金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "電子記録債務",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "未払金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "前受金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "預り金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "仮受金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "借入金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "未払費用",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "前受収益",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "仮受消費税",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "未払消費税",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "未払法人税等",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "貸倒引当金",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "減価償却累計額",
+   "category": "負債",
+   "level": "3級"
+  },
+  {
+   "name": "資本金",
+   "category": "純資産",
+   "level": "3級"
+  },
+  {
+   "name": "繰越利益剰余金",
+   "category": "純資産",
+   "level": "3級"
+  },
+  {
+   "name": "売上",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "受取手数料",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "受取利息",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "受取家賃",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "雑益",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "固定資産売却益",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "貸倒引当金戻入",
+   "category": "収益",
+   "level": "3級"
+  },
+  {
+   "name": "仕入",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "給料",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "法定福利費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "広告宣伝費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "支払手数料",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "旅費交通費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "通信費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "水道光熱費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "消耗品費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "支払家賃",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "保険料",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "租税公課",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "減価償却費",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "貸倒引当金繰入",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "貸倒損失",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "支払利息",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "雑損",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "固定資産売却損",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "法人税等",
+   "category": "費用",
+   "level": "3級"
+  },
+  {
+   "name": "満期保有目的債券",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "売買目的有価証券",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "その他有価証券",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "子会社株式",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "ソフトウェア",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "のれん",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "リース資産",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "繰延税金資産",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "契約資産",
+   "category": "資産",
+   "level": "2級商"
+  },
+  {
+   "name": "リース債務",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "退職給付引当金",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "修繕引当金",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "商品保証引当金",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "社債",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "契約負債",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "返金負債",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "繰延税金負債",
+   "category": "負債",
+   "level": "2級商"
+  },
+  {
+   "name": "資本準備金",
+   "category": "純資産",
+   "level": "2級商"
+  },
+  {
+   "name": "利益準備金",
+   "category": "純資産",
+   "level": "2級商"
+  },
+  {
+   "name": "別途積立金",
+   "category": "純資産",
+   "level": "2級商"
+  },
+  {
+   "name": "その他有価証券評価差額金",
+   "category": "純資産",
+   "level": "2級商"
+  },
+  {
+   "name": "非支配株主持分",
+   "category": "純資産",
+   "level": "2級商"
+  },
+  {
+   "name": "有価証券利息",
+   "category": "収益",
+   "level": "2級商"
+  },
+  {
+   "name": "有価証券売却益",
+   "category": "収益",
+   "level": "2級商"
+  },
+  {
+   "name": "為替差益",
+   "category": "収益",
+   "level": "2級商"
+  },
+  {
+   "name": "受取配当金",
+   "category": "収益",
+   "level": "2級商"
+  },
+  {
+   "name": "法人税等調整額",
+   "category": "収益",
+   "level": "2級商"
+  },
+  {
+   "name": "退職給付費用",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "有価証券売却損",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "為替差損",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "商品保証引当金繰入",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "研究開発費",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "のれん償却",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "ソフトウェア償却",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "支払リース料",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "創立費",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "開業費",
+   "category": "費用",
+   "level": "2級商"
+  },
+  {
+   "name": "材料",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "仕掛品",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "製品",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "製造間接費",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "賃金",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "経費",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "売上原価",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "月次損益",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "材料副費",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "製造間接費配賦差異",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "原価差異",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "予算差異",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "操業度差異",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "材料消費価格差異",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "賃率差異",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "本社",
+   "category": "工業",
+   "level": "2級工"
+  },
+  {
+   "name": "工場",
+   "category": "工業",
+   "level": "2級工"
+  }
+ ],
+ "questions": [
+  {
+   "id": "Q-0001",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "商品売買",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "架空商店は商品50,000円を掛けで仕入れた。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "仕入",
+      "amt": 50000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "買掛金",
+      "amt": 50000
+     }
+    ]
+   },
+   "explain": "商品の掛け仕入は買掛金。三分法では仕入勘定。",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0002",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "商品売買",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "架空商店は商品80,000円を販売し、代金は掛けとした。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "売掛金",
+      "amt": 80000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "売上",
+      "amt": 80000
+     }
+    ]
+   },
+   "explain": "商品の掛け販売は売掛金。",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0003",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "不要になった備品を30,000円で売却し、代金は月末に受け取ることにした（帳簿価額30,000円、減価償却は考慮しない）。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "未収入金",
+      "amt": 30000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "備品",
+      "amt": 30000
+     }
+    ]
+   },
+   "explain": "商品以外の後日回収は未収入金。",
+   "stdSec": 90,
+   "tags": ""
+  },
+  {
+   "id": "Q-0004",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "備品120,000円を購入し、代金は翌月払いとした。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "備品",
+      "amt": 120000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "未払金",
+      "amt": 120000
+     }
+    ]
+   },
+   "explain": "商品以外の後日支払は未払金。",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0005",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "前払前受",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "商品の注文にあたり手付金20,000円を現金で支払った。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "前払金",
+      "amt": 20000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "現金",
+      "amt": 20000
+     }
+    ]
+   },
+   "explain": "商品受取前の手付金支払は前払金（資産）。",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0006",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "前払前受",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "商品の注文を受け、手付金15,000円が普通預金に振り込まれた。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "普通預金",
+      "amt": 15000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "前受金",
+      "amt": 15000
+     }
+    ]
+   },
+   "explain": "商品引渡前の手付金受取は前受金（負債）。",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0007",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "商品売買",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "商品100,000円を販売し、30,000円は現金で受け取り、残額は掛けとした。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "現金",
+      "amt": 30000
+     },
+     {
+      "acct": "売掛金",
+      "amt": 70000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "売上",
+      "amt": 100000
+     }
+    ]
+   },
+   "explain": "一部現金・残額掛け。借方2行。",
+   "stdSec": 90,
+   "tags": ""
+  },
+  {
+   "id": "Q-0008",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "仕訳",
+   "text": "売掛金40,000円が普通預金に振り込まれた。",
+   "choices": [],
+   "answer": {
+    "debit": [
+     {
+      "acct": "普通預金",
+      "amt": 40000
+     }
+    ],
+    "credit": [
+     {
+      "acct": "売掛金",
+      "amt": 40000
+     }
+    ]
+   },
+   "explain": "売掛金の回収。資産の減少は貸方。",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0009",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "科目判断",
+   "text": "商品を掛けで販売したときに増える科目は？",
+   "choices": [
+    "売掛金",
+    "買掛金",
+    "未収入金",
+    "未払金"
+   ],
+   "answer": "売掛金",
+   "explain": "商品＋後で受け取る＝売掛金",
+   "stdSec": 20,
+   "tags": ""
+  },
+  {
+   "id": "Q-0010",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "科目判断",
+   "text": "商品を掛けで仕入れたときに増える科目は？",
+   "choices": [
+    "売掛金",
+    "買掛金",
+    "未収入金",
+    "未払金"
+   ],
+   "answer": "買掛金",
+   "explain": "商品＋後で支払う＝買掛金",
+   "stdSec": 20,
+   "tags": ""
+  },
+  {
+   "id": "Q-0011",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "科目判断",
+   "text": "土地を売却し代金を後日受け取るときの科目は？",
+   "choices": [
+    "売掛金",
+    "買掛金",
+    "未収入金",
+    "未払金"
+   ],
+   "answer": "未収入金",
+   "explain": "商品以外＋後で受け取る＝未収入金",
+   "stdSec": 20,
+   "tags": ""
+  },
+  {
+   "id": "Q-0012",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "債権債務",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "科目判断",
+   "text": "車両を購入し代金を後日支払うときの科目は？",
+   "choices": [
+    "売掛金",
+    "買掛金",
+    "未収入金",
+    "未払金"
+   ],
+   "answer": "未払金",
+   "explain": "商品以外＋後で支払う＝未払金",
+   "stdSec": 20,
+   "tags": ""
+  },
+  {
+   "id": "Q-0013",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "前払前受",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "科目判断",
+   "text": "商品の手付金を先に受け取ったときの科目は？",
+   "choices": [
+    "前払金",
+    "前受金",
+    "仮受金",
+    "売掛金"
+   ],
+   "answer": "前受金",
+   "explain": "引渡前の受取＝前受金（負債）",
+   "stdSec": 20,
+   "tags": ""
+  },
+  {
+   "id": "Q-0014",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "前払前受",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "科目判断",
+   "text": "内容不明の入金があったときに一時的に使う科目は？",
+   "choices": [
+    "前受金",
+    "仮受金",
+    "仮払金",
+    "雑益"
+   ],
+   "answer": "仮受金",
+   "explain": "内容不明の入金＝仮受金",
+   "stdSec": 20,
+   "tags": ""
+  },
+  {
+   "id": "Q-0015",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "売上原価",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "計算",
+   "text": "期首商品20,000円、当期仕入150,000円、期末商品30,000円。売上原価は？",
+   "choices": [],
+   "answer": 140000,
+   "explain": "期首＋仕入−期末＝20,000＋150,000−30,000",
+   "stdSec": 60,
+   "tags": ""
+  },
+  {
+   "id": "Q-0016",
+   "setId": "W02-BASIC",
+   "field": "商業簿記",
+   "topic": "減価償却",
+   "priority": "A",
+   "difficulty": "基本",
+   "format": "計算",
+   "text": "取得原価600,000円、残存価額0円、耐用年数5年。定額法の年間減価償却費は？",
+   "choices": [],
+   "answer": 120000,
+   "explain": "（取得原価−残存価額）÷耐用年数",
+   "stdSec": 60,
+   "tags": ""
+  }
+ ]
+}
