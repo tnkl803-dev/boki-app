@@ -50,13 +50,27 @@ class ResultHandler(SimpleHTTPRequestHandler):
         return super().do_GET()
 
 if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
     # Change to repo root
     os.chdir(Path(__file__).parent.parent)
+
+    # Write our own Windows PID to a pidfile so the launcher (bash/MSYS)
+    # can reliably taskkill us later. $! in git-bash gives an MSYS pid,
+    # not the real Windows PID, so we must self-report it.
+    pidfile = sys.argv[2] if len(sys.argv) > 2 else None
+    if pidfile:
+        with open(pidfile, 'w', encoding='utf-8') as f:
+            f.write(str(os.getpid()))
+
+    # Watchdog: if nothing POSTs a result within 60s (e.g. the browser
+    # never loaded, or JS crashed), exit on our own so we never linger
+    # as a zombie listener holding the port.
+    threading.Timer(60, lambda: os._exit(1)).start()
 
     server = ThreadingHTTPServer(('127.0.0.1', port), ResultHandler)
     ResultHandler.server_instance = server
     print(f'Serving on http://127.0.0.1:{port}/', file=sys.stderr)
+    print(os.getpid(), flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
