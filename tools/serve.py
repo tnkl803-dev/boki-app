@@ -36,11 +36,10 @@ class ResultHandler(SimpleHTTPRequestHandler):
             self.wfile.flush()
 
             # Shut down server after sending result (prevent zombie process)
-            if self.server_instance:
-                def delayed_shutdown():
-                    time.sleep(0.5)  # Ensure response is sent before shutdown
-                    self.server_instance.shutdown()
-                threading.Thread(target=delayed_shutdown, daemon=True).start()
+            def delayed_exit():
+                time.sleep(0.2)  # Ensure response is sent before exit
+                os._exit(0)  # Force process exit
+            threading.Thread(target=delayed_exit, daemon=True).start()
         else:
             self.send_response(404)
             self.end_headers()
