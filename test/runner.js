@@ -16,12 +16,19 @@ export const assert = {
 export async function run() {
   const out = document.getElementById('out');
   let pass = 0, failCount = 0;
+  const results = [];
   for (const t of tests) {
     const li = document.createElement('li');
-    try { await t.fn(); li.className = 'pass'; li.textContent = `✔ ${t.name}`; pass++; }
-    catch (e) { li.className = 'fail'; li.textContent = `✘ ${t.name}: ${e.message}`; failCount++; }
+    try { await t.fn(); li.className = 'pass'; li.textContent = `✔ ${t.name}`; pass++; results.push(`✔ ${t.name}`); }
+    catch (e) { li.className = 'fail'; li.textContent = `✘ ${t.name}: ${e.message}`; failCount++; results.push(`✘ ${t.name}: ${e.message}`); }
     out.appendChild(li);
   }
-  document.getElementById('summary').textContent = `pass ${pass} / fail ${failCount}`;
+  const summary = `pass ${pass} / fail ${failCount}`;
+  document.getElementById('summary').textContent = summary;
   document.title = failCount ? `FAIL ${failCount}` : 'ALL PASS';
+
+  if (location.search.includes('report=1')) {
+    const report = [summary, ...results].join('\n');
+    fetch('/__result', { method: 'POST', body: report }).catch(() => {});
+  }
 }
