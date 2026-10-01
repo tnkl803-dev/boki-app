@@ -17,16 +17,17 @@ export async function render(root, ctx) {
 }
 
 function start(root, ctx, queue, today) {
-  const startAt = Date.now(); const pending = [...queue]; const firstRating = new Map(); const total = queue.length; let cardStart = Date.now();
+  const startAt = Date.now(); const pending = [...queue]; const finalRatings = new Map(); const total = queue.length; let cardStart = Date.now();
   const next = () => {
     if (pending.length === 0) return finish();
     const c = pending[0]; cardStart = Date.now();
+    const ratingBtns = [1, 2, 3, 4].map(r => el('button', { class: `rate r${r}`, onclick: () => { ratingBtns.forEach(b => b.disabled = true); rate(c, r); } }, RATING_LABEL[r]));
     const back = el('div', { hidden: true },
       el('p', { class: 'answer' }, c.back), c.example ? el('p', { class: 'muted' }, '例: ', c.example) : null, c.pitfall ? el('p', { class: 'ng' }, '注意: ', c.pitfall) : null,
-      el('div', { class: 'row rating' }, ...[1, 2, 3, 4].map(r => el('button', { class: `rate r${r}`, onclick: () => rate(c, r) }, RATING_LABEL[r]))),
+      el('div', { class: 'row rating' }, ...ratingBtns),
       el('p', { class: 'muted small' }, RATING_HINT));
     root.replaceChildren(el('div', { class: 'card' },
-      el('p', { class: 'muted' }, `${firstRating.size + 1} / ${total}　${c.field}・${c.topic}・${c.priority}　${cardStatus(c)}`),
+      el('p', { class: 'muted' }, `${finalRatings.size + 1} / ${total}　${c.field}・${c.topic}・${c.priority}　${cardStatus(c)}`),
       el('h3', {}, c.front),
       el('button', { class: 'primary block', onclick: e => { back.hidden = false; e.target.hidden = true; } }, '答えを見る'), back));
   };
@@ -36,12 +37,12 @@ function start(root, ctx, queue, today) {
     await put(ctx.db, 'cards', updated);
     await put(ctx.db, 'reviewLogs', { id: `RL-${Date.now()}-${c.id}`, cardId: c.id, at: new Date().toISOString(), rating: r, prevInterval: c.interval, newInterval: s.interval, elapsedSec: Math.round((Date.now() - cardStart) / 1000) });
     pending.shift();
-    if (!firstRating.has(c.id)) firstRating.set(c.id, r);
+    finalRatings.set(c.id, r);
     if (r === 1) pending.push(updated);
     next();
   };
   const finish = async () => {
-    const results = [...firstRating].map(([cardId, fr]) => ({ cardId, finalRating: fr }));
+    const results = [...finalRatings].map(([cardId, finalRating]) => ({ cardId, finalRating }));
     const sum = summarizeReview(results, (Date.now() - startAt) / 1000);
     const row = await saveDailyLog(ctx.db, ctx.settings, { date: today, code: 'CARD', sessionType: '単語帳', field: queue[0]?.field, topic: 'カード復習', priority: 'A', content: `カード復習 ${sum.q}枚`, ...sum, cause: sum.wrong ? '知識不足' : '' });
     toast(`日次記録 ${row.id} を保存`);

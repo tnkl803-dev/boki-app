@@ -24,7 +24,7 @@ async function start(root, ctx, list, fmt) {
     const timer = el('span', { class: 'muted' }, `0秒 / 標準${q.stdSec ?? '-'}秒`);
     const tick = setInterval(() => { if (!timer.isConnected) { clearInterval(tick); return; } timer.textContent = `${Math.round((Date.now() - qStart) / 1000)}秒 / 標準${q.stdSec ?? '-'}秒`; }, 1000);
     currentTick = tick;
-    const submit = el('button', { class: 'primary block', onclick: () => { const my = form.value(); if (fmt === '仕訳' && gradeJournal(q.answer, my).kind === '未入力') return toast('科目と金額を入力してください'); if (fmt !== '仕訳' && fmt !== '記述' && String(my).trim() === '') return toast('回答を入力してください'); clearInterval(tick); currentTick = null; grade(q, my, Math.round((Date.now() - qStart) / 1000)); } }, '回答する');
+    const submit = el('button', { class: 'primary block', onclick: () => { if (submit.disabled) return; const my = form.value(); if (fmt === '仕訳' && gradeJournal(q.answer, my).kind === '未入力') return toast('科目と金額を入力してください'); if (fmt !== '仕訳' && fmt !== '記述' && String(my).trim() === '') return toast('回答を入力してください'); submit.disabled = true; clearInterval(tick); currentTick = null; grade(q, my, Math.round((Date.now() - qStart) / 1000)); } }, '回答する');
     root.replaceChildren(el('div', { class: 'card' }, el('p', { class: 'muted' }, `${i + 1} / ${list.length}　${q.field}・${q.topic}・${q.priority}　`, timer), el('h3', {}, q.text), form.node, submit));
   };
   const grade = (q, my, sec) => {
@@ -36,17 +36,19 @@ async function start(root, ctx, list, fmt) {
     const causeSel = el('select', {}, el('option', { value: '' }, '間違い原因を選ぶ'), ...option(CAUSES));
     const selfSel = result ? null : el('select', {}, ...option(['正解', '不正解', '要確認']));
     const save = async () => {
+      if (nextBtn.disabled) return; nextBtn.disabled = true;
       const c = result ? result.correct : selfSel.value === '正解' ? true : selfSel.value === '不正解' ? false : '要確認';
       if (c === true) correct++; else if (c === false) wrong++; else unsure++;
       await put(ctx.db, 'answerLogs', { id: `AL-${Date.now()}`, questionId: q.id, at: new Date().toISOString(), week: weekOf(today, ctx.settings.startDate), myAnswer: my, correct: c, score: c === true ? 1 : 0, maxScore: 1, sec, stdSec: q.stdSec ?? null, overSec: overSec(sec, q.stdSec), cause: c === true ? '' : causeSel.value, needReview: c !== true, nextReview: c !== true ? today : null });
       i++; show();
     };
     const over = overSec(sec, q.stdSec);
+    const nextBtn = el('button', { class: 'primary block', onclick: save }, '次へ');
     root.replaceChildren(el('div', { class: 'card' }, el('h3', {}, q.text),
       result ? el('p', { class: result.correct ? 'ok' : 'ng' }, result.correct ? '正解' : `不正解${result.kind ? `（${result.kind}）` : ''}`) : el('p', {}, '自己採点: ', selfSel),
       el('p', {}, '正解: ', fmtAnswer(q)), el('p', { class: 'muted' }, q.explain),
       el('p', { class: 'muted small' }, `解答 ${sec}秒 / 標準 ${q.stdSec ?? '-'}秒${over ? `（${over}秒超過）` : ''}`),
-      (!result || !result.correct) ? el('p', {}, causeSel) : null, el('button', { class: 'primary block', onclick: save }, '次へ')));
+      (!result || !result.correct) ? el('p', {}, causeSel) : null, nextBtn));
   };
   const finish = async () => {
     const actualMin = Math.round((Date.now() - startAt) / 60000);
