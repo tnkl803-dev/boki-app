@@ -1,5 +1,6 @@
 import { test, assert } from './runner.js';
 import { CAUSES, normalizeNumber, gradeJournal, gradeExact, gradeNumeric, accuracy, weekOf, nextDailyLogId, overSec } from '../js/scoring.js';
+import { summarizeReview } from '../js/session.js';
 
 test('CAUSES has 7', () => assert.equal(CAUSES.length, 7));
 test('normalizeNumber', () => {
@@ -33,3 +34,7 @@ test('nextDailyLogId', () => {
   assert.equal(nextDailyLogId('2026-09-25', 'ANKI', ['DL-20260925-ANKI201', 'DL-20260925-ANKI01']), 'DL-20260925-ANKI02');
 });
 test('overSec', () => { assert.equal(overSec(70, 60), 10); assert.equal(overSec(50, 60), 0); assert.equal(overSec(50, null), 0); assert.equal(overSec(10, 0), 10); });
+test('summarizeReview', () => {
+  const r = summarizeReview([{ cardId: 'a', finalRating: 1 }, { cardId: 'b', finalRating: 3 }, { cardId: 'c', finalRating: 4 }], 605);
+  assert.deepEqual(r, { q: 3, correct: 2, wrong: 1, actualMin: 10 });
+});
