@@ -18,3 +18,6 @@ table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--li
 .rate.r1{background:#ffebee}.rate.r2{background:#fff3e0}.rate.r3{background:#e8f5e9}.rate.r4{background:#e3f2fd}
 .answer{font-size:18px;font-weight:bold}.block{display:block;width:100%;margin:8px 0}
 .choice{flex:1 1 45%}.choice.selected{background:var(--pri);color:#fff}.jline select{flex:3;min-width:0}.jline input{flex:2;min-width:0}
+.subtabs a{flex:1;text-align:center;padding:10px;border-bottom:2px solid transparent;text-decoration:none;color:var(--fg)}.subtabs a.active{border-color:var(--pri);color:var(--pri)}
+.field{display:block;margin:8px 0;font-size:14px}.field input,.field select,.field textarea{display:block;width:100%;margin-top:4px}
+.card.compact{padding:10px;cursor:pointer}
