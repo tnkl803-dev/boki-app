@@ -1,6 +1,6 @@
 import { el, toast, option, confirmDialog } from '../ui.js';
 import { getAll, put, del } from '../db.js';
-import { normalizeNumber } from '../scoring.js';
+import { normalizeNumber, nextQuestionId } from '../scoring.js';
 import { journalForm } from './journalForm.js';
 const FORMATS = ['仕訳', '科目判断', '計算', '選択', '記述'];
 export async function render(root, ctx) {
@@ -25,7 +25,7 @@ async function form(root, ctx, q) {
   };
   fmt.inp.onchange = drawAns; drawAns();
   const save = async () => {
-    const o = { ...q }; for (const x of fs) o[x.key] = x.inp.type === 'number' ? Number(x.inp.value) : x.inp.value.trim();
+    const o = { ...q }; for (const x of fs) o[x.key] = x.inp.type === 'number' ? (x.inp.value.trim() === '' ? null : Number(x.inp.value)) : x.inp.value.trim();
     if (!o.text) return toast('問題文は必須');
     if (jf) {
       const v = jf.value(); const conv = rs => rs.filter(r => r.acct).map(r => ({ acct: r.acct, amt: normalizeNumber(r.amt) }));
@@ -37,7 +37,7 @@ async function form(root, ctx, q) {
       if (o.answer === '' || o.answer === null) return toast('正解は必須');
       if ((o.format === '科目判断' || o.format === '選択') && !o.choices.includes(o.answer)) return toast('正解が選択肢に含まれていません');
     }
-    if (isNew) { const ids = (await getAll(ctx.db, 'questions')).map(x => Number(x.id.slice(2)) || 0); o.id = `Q-${String(Math.max(0, ...ids) + 1).padStart(4, '0')}`; }
+    if (isNew) { const ids = (await getAll(ctx.db, 'questions')).map(x => x.id); o.id = nextQuestionId(ids); }
     await put(ctx.db, 'questions', o); toast(isNew ? `${o.id} を追加` : '保存'); render(root, ctx);
   };
   const remove = isNew ? null : el('button', { onclick: async () => { if (await confirmDialog(`${q.id} を削除しますか？`)) { await del(ctx.db, 'questions', q.id); render(root, ctx); } } }, '削除');

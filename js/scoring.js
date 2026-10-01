@@ -30,10 +30,18 @@ export function weekOf(dateIso, startIso) {
   const ms = Date.parse(dateIso + 'T00:00:00Z') - Date.parse(startIso + 'T00:00:00Z');
   return Math.floor(ms / 86400000 / 7) + 1;
 }
+function nextIdByMax(prefix, suffixLen, existingIds) {
+  const re = new RegExp('^' + prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + `(\\d{${suffixLen}})$`);
+  const n = existingIds.reduce((max, id) => { const m = re.exec(id); return m ? Math.max(max, Number(m[1])) : max; }, 0) + 1;
+  return `${prefix}${String(n).padStart(suffixLen, '0')}`;
+}
 export function nextDailyLogId(dateIso, code, existingIds) {
-  const prefix = `DL-${dateIso.replace(/-/g, '')}-${code}`;
-  const re = new RegExp('^' + prefix.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\d{2}$');
-  const n = existingIds.filter(id => re.test(id)).length + 1;
-  return `${prefix}${String(n).padStart(2, '0')}`;
+  return nextIdByMax(`DL-${dateIso.replace(/-/g, '')}-${code}`, 2, existingIds);
+}
+export function nextCardId(week, existingIds) {
+  return nextIdByMax(`FC-W${String(week).padStart(2, '0')}-`, 4, existingIds);
+}
+export function nextQuestionId(existingIds) {
+  return nextIdByMax('Q-', 4, existingIds);
 }
 export function overSec(sec, stdSec) { return stdSec == null ? 0 : Math.max(0, sec - stdSec); }

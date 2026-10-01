@@ -1,7 +1,7 @@
 import { el, toast, todayIso, option, confirmDialog } from '../ui.js';
 import { getAll, put, del } from '../db.js';
 import { newSrsState, cardStatus } from '../srs.js';
-import { weekOf } from '../scoring.js';
+import { weekOf, nextCardId } from '../scoring.js';
 const FIELDS = ['3級基礎', '商業簿記', '工業簿記'];
 export async function render(root, ctx) {
   const cards = (await getAll(ctx.db, 'cards')).sort((a, b) => a.id.localeCompare(b.id));
@@ -11,7 +11,7 @@ export async function render(root, ctx) {
   filter.oninput = draw; draw();
   root.replaceChildren(el('div', { class: 'row' }, filter, el('button', { class: 'primary', onclick: () => form(root, ctx, null) }, '＋カード追加')), el('p', { class: 'muted small' }, `${cards.length}枚`), list);
 }
-async function nextId(ctx, week) { const ids = (await getAll(ctx.db, 'cards')).map(c => c.id); const p = `FC-W${String(week).padStart(2, '0')}-`; return `${p}${String(ids.filter(i => i.startsWith(p)).length + 1).padStart(4, '0')}`; }
+async function nextId(ctx, week) { const ids = (await getAll(ctx.db, 'cards')).map(c => c.id); return nextCardId(week, ids); }
 function form(root, ctx, c) {
   const isNew = !c;
   c = c ?? { field: '商業簿記', topic: '', priority: 'A', type: '処理ルール', front: '', back: '', example: '', pitfall: '', tags: '', status: '新規', ...newSrsState(), due: todayIso(), createdAt: todayIso() };

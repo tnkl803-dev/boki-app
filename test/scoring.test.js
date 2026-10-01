@@ -1,5 +1,5 @@
 import { test, assert } from './runner.js';
-import { CAUSES, normalizeNumber, gradeJournal, gradeExact, gradeNumeric, accuracy, weekOf, nextDailyLogId, overSec } from '../js/scoring.js';
+import { CAUSES, normalizeNumber, gradeJournal, gradeExact, gradeNumeric, accuracy, weekOf, nextDailyLogId, nextCardId, nextQuestionId, overSec } from '../js/scoring.js';
 import { summarizeReview } from '../js/session.js';
 
 test('CAUSES has 7', () => assert.equal(CAUSES.length, 7));
@@ -32,6 +32,23 @@ test('nextDailyLogId', () => {
   assert.equal(nextDailyLogId('2026-09-25', 'ANKI', []), 'DL-20260925-ANKI01');
   assert.equal(nextDailyLogId('2026-09-25', 'ANKI', ['DL-20260925-ANKI01', 'DL-20260925-QUIZ01', 'DL-20260924-ANKI01']), 'DL-20260925-ANKI02');
   assert.equal(nextDailyLogId('2026-09-25', 'ANKI', ['DL-20260925-ANKI201', 'DL-20260925-ANKI01']), 'DL-20260925-ANKI02');
+});
+test('nextDailyLogId reuses max suffix, not count, after a delete', () => {
+  // only ANKI02 remains (ANKI01 was deleted) -> next must be 03, not 02 (which would overwrite ANKI02)
+  assert.equal(nextDailyLogId('2026-09-25', 'ANKI', ['DL-20260925-ANKI02']), 'DL-20260925-ANKI03');
+});
+test('nextCardId reuses max suffix after a delete', () => {
+  assert.equal(nextCardId(1, []), 'FC-W01-0001');
+  assert.equal(nextCardId(1, ['FC-W01-0001', 'FC-W01-0002']), 'FC-W01-0003');
+  // FC-W01-0001 was deleted, only 0002 remains -> next must be 0003, not 0002
+  assert.equal(nextCardId(1, ['FC-W01-0002']), 'FC-W01-0003');
+  assert.equal(nextCardId(10, ['FC-W01-0005']), 'FC-W10-0001');
+});
+test('nextQuestionId reuses max suffix after a delete', () => {
+  assert.equal(nextQuestionId([]), 'Q-0001');
+  assert.equal(nextQuestionId(['Q-0001', 'Q-0002']), 'Q-0003');
+  // Q-0001 was deleted, only 0002 remains -> next must be 0003, not 0002
+  assert.equal(nextQuestionId(['Q-0002']), 'Q-0003');
 });
 test('overSec', () => { assert.equal(overSec(70, 60), 10); assert.equal(overSec(50, 60), 0); assert.equal(overSec(50, null), 0); assert.equal(overSec(10, 0), 10); });
 test('summarizeReview', () => {
