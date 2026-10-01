@@ -15,14 +15,16 @@ export async function render(root, ctx) {
 
 async function start(root, ctx, list, fmt) {
   const accounts = (await getAll(ctx.db, 'accounts')).map(a => a.name).sort();
-  const today = todayIso(), startAt = Date.now(); let i = 0, correct = 0, wrong = 0, unsure = 0;
+  const today = todayIso(), startAt = Date.now(); let i = 0, correct = 0, wrong = 0, unsure = 0, currentTick = null;
   const show = () => {
+    if (currentTick) { clearInterval(currentTick); currentTick = null; }
     if (i >= list.length) return finish();
     const q = list[i]; const qStart = Date.now();
     const form = fmt === '仕訳' ? journalForm(accounts) : (fmt === '科目判断' || fmt === '選択') ? choiceForm(q.choices) : fmt === '計算' ? numForm() : textForm();
     const timer = el('span', { class: 'muted' }, `0秒 / 標準${q.stdSec ?? '-'}秒`);
-    const tick = setInterval(() => (timer.textContent = `${Math.round((Date.now() - qStart) / 1000)}秒 / 標準${q.stdSec ?? '-'}秒`), 1000);
-    const submit = el('button', { class: 'primary block', onclick: () => { const my = form.value(); if (fmt === '仕訳' && gradeJournal(q.answer, my).kind === '未入力') return toast('科目と金額を入力してください'); if (fmt !== '仕訳' && fmt !== '記述' && String(my).trim() === '') return toast('回答を入力してください'); clearInterval(tick); grade(q, my, Math.round((Date.now() - qStart) / 1000)); } }, '回答する');
+    const tick = setInterval(() => { if (!timer.isConnected) { clearInterval(tick); return; } timer.textContent = `${Math.round((Date.now() - qStart) / 1000)}秒 / 標準${q.stdSec ?? '-'}秒`; }, 1000);
+    currentTick = tick;
+    const submit = el('button', { class: 'primary block', onclick: () => { const my = form.value(); if (fmt === '仕訳' && gradeJournal(q.answer, my).kind === '未入力') return toast('科目と金額を入力してください'); if (fmt !== '仕訳' && fmt !== '記述' && String(my).trim() === '') return toast('回答を入力してください'); clearInterval(tick); currentTick = null; grade(q, my, Math.round((Date.now() - qStart) / 1000)); } }, '回答する');
     root.replaceChildren(el('div', { class: 'card' }, el('p', { class: 'muted' }, `${i + 1} / ${list.length}　${q.field}・${q.topic}・${q.priority}　`, timer), el('h3', {}, q.text), form.node, submit));
   };
   const grade = (q, my, sec) => {
