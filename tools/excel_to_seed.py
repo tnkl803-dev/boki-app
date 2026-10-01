@@ -7,6 +7,30 @@ def iso(v):
     if isinstance(v, dt.date): return v.isoformat()
     return None
 
+CAUSES = ['知識不足', '科目判断ミス', '読み違い', '計算ミス', '桁ミス', '時間切れ', '回答範囲不足']
+
+def normalize_cause(text):
+    """Normalize cause text to one of the CAUSES enum values or null.
+    Maps text that equals or contains an enum member keyword to it.
+    Returns null for unmappable text (including '未分類' and empty strings).
+    Special mapping: 読い違い/読み違い → 読み違い
+    """
+    if not text or not str(text).strip():
+        return None
+    text = str(text).strip()
+    # Check for exact match
+    if text in CAUSES:
+        return text
+    # Special case: normalize 読い違い to 読み違い
+    if '読い違い' in text:
+        return '読み違い'
+    # Check if text contains any enum keyword
+    for cause in CAUSES:
+        if cause in text:
+            return cause
+    # Unmappable (including '未分類')
+    return None
+
 def rows(ws, header_row=3):
     hdr = [c.value for c in ws[header_row]]
     for r in ws.iter_rows(min_row=header_row + 1, values_only=True):
@@ -71,7 +95,7 @@ def main(path, today=None):
     daily = [{'id': r['DailyLogID'], 'date': iso(r['日付']), 'sessionType': r['セッション区分'], 'field': r['分野'], 'topic': r['論点'],
               'priority': r['優先度'], 'content': r['学習内容'], 'planMin': r['予定時間分'], 'actualMin': r['実績時間分'],
               'q': r['問題数'], 'correct': r['正解数'], 'wrong': r['不正解数'], 'blank': r['未回答数'],
-              'understand': r['理解度'], 'focus': r['集中度'], 'confidence': r['自信度'], 'cause': r['間違いの主原因'] or '',
+              'understand': r['理解度'], 'focus': r['集中度'], 'confidence': r['自信度'], 'cause': normalize_cause(r['間違いの主原因']),
               'comment': r.get('コメント') or ''}
              for r in rows(wb['日次記録'])]
     start = settings[0]['startDate']
