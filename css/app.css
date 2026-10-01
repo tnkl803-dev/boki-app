@@ -21,3 +21,4 @@ table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--li
 .subtabs a{flex:1;text-align:center;padding:10px;border-bottom:2px solid transparent;text-decoration:none;color:var(--fg)}.subtabs a.active{border-color:var(--pri);color:var(--pri)}
 .field{display:block;margin:8px 0;font-size:14px}.field input,.field select,.field textarea{display:block;width:100%;margin-top:4px}
 .card.compact{padding:10px;cursor:pointer}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}.tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}.tile.warn{border-color:var(--warn)}.tile.ng{border-color:var(--ng)}.big{font-size:22px;font-weight:bold}.grow{flex:1}
