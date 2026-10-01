@@ -17,3 +17,4 @@ table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--li
 .rating{margin-top:12px}.rating button{flex:1 1 45%}
 .rate.r1{background:#ffebee}.rate.r2{background:#fff3e0}.rate.r3{background:#e8f5e9}.rate.r4{background:#e3f2fd}
 .answer{font-size:18px;font-weight:bold}.block{display:block;width:100%;margin:8px 0}
+.choice{flex:1 1 45%}.choice.selected{background:var(--pri);color:#fff}.jline select{flex:3;min-width:0}.jline input{flex:2;min-width:0}
