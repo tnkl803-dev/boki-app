@@ -11,7 +11,6 @@ class ResultHandler(SimpleHTTPRequestHandler):
 
     def log_message(self, format, *args):
         # Log to stderr for debugging
-        import sys
         print(f"[LOG] {format % args}", file=sys.stderr)
 
     def do_POST(self):
