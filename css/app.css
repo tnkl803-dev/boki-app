@@ -14,3 +14,6 @@ button[disabled]{opacity:.5}
 #toast{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:8px;z-index:10}
 .ok{color:var(--ok)}.ng{color:var(--ng)}.muted{color:#777}.small{font-size:12px}
 table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:6px;text-align:left;font-size:14px}
+.rating{margin-top:12px}.rating button{flex:1 1 45%}
+.rate.r1{background:#ffebee}.rate.r2{background:#fff3e0}.rate.r3{background:#e8f5e9}.rate.r4{background:#e3f2fd}
+.answer{font-size:18px;font-weight:bold}.block{display:block;width:100%;margin:8px 0}
