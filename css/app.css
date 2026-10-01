@@ -8,7 +8,7 @@ button.primary{background:var(--pri);color:#fff;border-color:var(--pri)}
 button[disabled]{opacity:.5}
 .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:8px 0}
-#tabs{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid var(--line)}
+#tabs{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
 #tabs a{flex:1;text-align:center;padding:12px 0;text-decoration:none;color:var(--fg);font-size:14px}
 #tabs a.active{color:var(--pri);font-weight:bold}
 #toast{position:fixed;bottom:72px;left:50%;transform:translateX(-50%);background:#333;color:#fff;padding:10px 16px;border-radius:8px;z-index:10}

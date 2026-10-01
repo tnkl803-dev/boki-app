@@ -21,7 +21,7 @@ async function data(body, ctx) {
   const fields = [f('学習開始日', 'startDate', 'date'), f('目標受験日', 'examDate', 'date'), f('平日学習分', 'weekdayMin', 'number'), f('休日学習分', 'weekendMin', 'number'), f('合格基準点', 'passScore', 'number'), f('安全圏基準点', 'safeScore', 'number')];
   const saveBtn = el('button', { class: 'primary', onclick: async () => { const o = { ...s }; for (const x of fields) o[x.key] = x.inp.type === 'number' ? Number(x.inp.value) : x.inp.value; if (!o.startDate || !o.examDate) return toast('開始日と受験日は必須'); await put(ctx.db, 'settings', o); await ctx.refreshSettings(); toast('設定を保存'); } }, '設定を保存');
   const exp = el('button', { class: 'block', onclick: () => download(ctx) }, 'エクスポート（JSONダウンロード）');
-  const file = el('input', { type: 'file', accept: 'application/json' });
+  const file = el('input', { type: 'file', accept: 'application/json,.json' });
   const mode = el('select', {}, el('option', { value: 'merge' }, 'マージ（新しい方優先）'), el('option', { value: 'overwrite' }, '上書き（全置換）'));
   const imp = el('button', { class: 'block', onclick: async () => {
     if (!file.files[0]) return toast('ファイルを選んでください');

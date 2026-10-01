@@ -11,6 +11,7 @@ const ctx = { db: null, settings: null, navigate: h => (location.hash = h), refr
 async function boot() {
   const root = document.getElementById('view');
   try { ctx.db = await openDb(); } catch (e) { root.replaceChildren(el('div', { class: 'card ng' }, 'このブラウザではデータ保存（IndexedDB）が使えません。プライベートモードを解除してください。')); return; }
+  navigator.storage?.persist?.().catch(() => {});
   try { const seed = await (await fetch('data/seed.json')).json(); if (await seedIfEmpty(ctx.db, seed)) toast('初期データを読み込みました'); } catch (e) { console.error(e); }
   await ctx.refreshSettings();
   document.getElementById('tabs').replaceChildren(...TABS.map(([k, label]) => el('a', { href: `#/${k}`, 'data-tab': k }, label)));
