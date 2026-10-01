@@ -45,3 +45,41 @@ test('seedIfEmpty loads once', async () => {
   assert.equal((await get(db, 'settings', 'main')).startDate, '2026-09-18');
   assert.ok(!(await seedIfEmpty(db, seed))); db.close();
 });
+test('seedIfEmpty stamps epoch updatedAt so a PC backup always wins on merge', async () => {
+  const db = await fresh();
+  const seed = await (await fetch('../data/seed.json')).json();
+  await seedIfEmpty(db, seed);
+  const seeded = (await getAll(db, 'cards'))[0];
+  assert.equal(seeded.updatedAt, '1970-01-01T00:00:00.000Z');
+  const dump = { version: 1, exportedAt: 'x', stores: Object.fromEntries(STORES.map(s => [s, []])) };
+  dump.stores.cards = [{ ...seeded, front: 'from-pc-backup', updatedAt: '2026-09-20T00:00:00Z' }];
+  await importAll(db, dump, 'merge');
+  assert.equal((await get(db, 'cards', seeded.id)).front, 'from-pc-backup'); db.close();
+});
+test('put stamps createdAt once on create and preserves it on update', async () => {
+  const db = await fresh();
+  const r1 = await put(db, 'cards', { id: 'FC-1', front: 'a' });
+  assert.ok(r1.createdAt);
+  const r2 = await put(db, 'cards', { ...r1, front: 'b' });
+  assert.equal(r2.createdAt, r1.createdAt); db.close();
+});
+test('import merge: same id but different createdAt is a different record -> incoming gets a fresh card id', async () => {
+  const db = await fresh();
+  await put(db, 'cards', { id: 'FC-W01-0001', front: 'local', createdAt: '2026-09-20T00:00:00.000Z' }, { keepUpdatedAt: true });
+  const dump = { version: 1, exportedAt: 'x', stores: Object.fromEntries(STORES.map(s => [s, []])) };
+  dump.stores.cards = [{ id: 'FC-W01-0001', front: 'remote-different-card', createdAt: '2026-09-21T00:00:00.000Z', updatedAt: '2026-09-21T00:00:00.000Z' }];
+  await importAll(db, dump, 'merge');
+  const all = await getAll(db, 'cards');
+  assert.equal(all.length, 2);
+  assert.ok(all.find(c => c.id === 'FC-W01-0001' && c.front === 'local'));
+  assert.ok(all.find(c => c.id === 'FC-W01-0002' && c.front === 'remote-different-card')); db.close();
+});
+test('import merge: same id and same createdAt keeps newer-wins (no reassignment)', async () => {
+  const db = await fresh();
+  await put(db, 'cards', { id: 'FC-W01-0001', front: 'local-new', createdAt: '2026-09-20T00:00:00.000Z', updatedAt: '2026-09-25T00:00:00.000Z' }, { keepUpdatedAt: true });
+  const dump = { version: 1, exportedAt: 'x', stores: Object.fromEntries(STORES.map(s => [s, []])) };
+  dump.stores.cards = [{ id: 'FC-W01-0001', front: 'remote-old', createdAt: '2026-09-20T00:00:00.000Z', updatedAt: '2026-09-20T00:00:00Z' }];
+  await importAll(db, dump, 'merge');
+  const all = await getAll(db, 'cards');
+  assert.equal(all.length, 1); assert.equal(all[0].front, 'local-new'); db.close();
+});
